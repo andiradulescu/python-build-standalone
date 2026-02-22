@@ -667,7 +667,7 @@ if [[ "${PYBUILD_PLATFORM}" != macos* ]]; then
     if [ -n "${PYTHON_MEETS_MINIMUM_VERSION_3_13}" ]; then
         patch -p1 -i ${ROOT}/patch-sem-clockwait-weak-3.13.patch
     elif [ -n "${PYTHON_MEETS_MINIMUM_VERSION_3_12}" ]; then
-        patch -p1 -i ${ROOT}/patch-sem-clockwait-weak.patch
+        patch -p1 -i ${ROOT}/patch-sem-clockwait-weak-3.12.patch
     elif [ -n "${PYTHON_MEETS_MINIMUM_VERSION_3_11}" ]; then
         patch -p1 -i ${ROOT}/patch-sem-clockwait-weak-3.11.patch
     else
