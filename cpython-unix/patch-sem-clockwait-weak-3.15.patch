@@ -4,8 +4,8 @@
  
  #include <stdbool.h>
  
-+/* When cross-compiling against old glibc headers (e.g., glibc < 2.30),
-+ * configure cannot detect sem_clockwait. Declare it as a weak symbol so it
++/* When building against glibc headers older than 2.30, configure cannot
++ * detect sem_clockwait. Declare it as a weak symbol so it
 + * resolves to NULL on old glibc and to the real function on glibc 2.30+.
 + * This enables monotonic clock waits at runtime when available, preventing
 + * hangs when the system clock jumps backward (e.g., NTP sync). */

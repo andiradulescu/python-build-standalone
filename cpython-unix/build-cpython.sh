@@ -659,7 +659,7 @@ if [ -n "${CROSS_COMPILING}" ]; then
 fi
 
 # Apply weak sem_clockwait patch for runtime detection on old glibc.
-# When cross-compiling against old glibc headers (< 2.30), configure cannot detect
+# When building against glibc headers older than 2.30, configure cannot detect
 # sem_clockwait, causing threading.Event.wait() to use CLOCK_REALTIME instead of
 # CLOCK_MONOTONIC. This makes waits hang when the system clock jumps backward.
 # The patch declares sem_clockwait as a weak symbol and checks at runtime.
